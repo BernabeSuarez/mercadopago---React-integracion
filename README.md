@@ -1,4 +1,4 @@
-$${\color{coral} Integracion\space\ de \space\ checkout \space\ pro\space\ de\space\ MercadoPago \space\con\space\ React}$$
+# Integracion de Checkout Pro de mercado pago con React app
 
 Front realizado con react simulacion de productos de una tienda.
 Back con Node, express y mercadopago
