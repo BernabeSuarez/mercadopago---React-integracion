@@ -8,6 +8,14 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
+import axios from "axios";
+
+const buy = (prod) => {
+  axios
+    .post("http://localhost:8080/payment", prod)
+    .then((res) => (window.location.href = res.data.response.body.init_point))
+    .catch((err) => console.log(err));
+};
 
 const ProductCard = ({ prod }) => {
   return (
@@ -33,7 +41,13 @@ const ProductCard = ({ prod }) => {
         </CardBody>
 
         <CardFooter>
-          <Button variant="solid" colorScheme="blue">
+          <Button
+            variant="solid"
+            colorScheme="blue"
+            onClick={() => {
+              buy(prod);
+            }}
+          >
             Comprar
           </Button>
         </CardFooter>
