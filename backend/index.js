@@ -8,6 +8,8 @@ const app = express()
 
 dotenv.config()
 
+const PORT = process.env.PORT
+
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(cors())
@@ -43,6 +45,6 @@ app.post('/payment', (req, res) => {
 })
 
 
-app.listen(8080, () => {
+app.listen(PORT, () => {
     console.log('Server Running...')
 })
